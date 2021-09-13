@@ -73,4 +73,38 @@ ReactDom.render(
                 <h2>Good to see you here. </h2>
             </div>
         );
+
+    create-react-app 설치
+            준비과정 
+        1. Node v6 이상
+        2. npm v5.2 이상
+
+            실행과정
+        1. npx create-react-app "원하는 이름" 입력
+        2. 설치가 완료되면 입력한 이름의 폴더가 생성 되는데 그 폴더의 구조는
+            "원하는 이름"
+                |____ README.md
+                |____ node_modules 
+                |____ package.json
+                |____ .gitignore
+                |____ public
+                |     |__ favicon.ico
+                |     |__ index.html
+                |     |__ manifest.json
+                |___ src
+                      |__ App.css
+                      |__ App.js
+                      |__ App.test.js
+                      |__ index.css
+                      |__ index.js
+                      |__ logo.svg
+                      |__ serviceWorker.js
+        3. npm start 입력 (stat-script 실행되면서 리엑트 앱이 돌아간다.)(developer build(개발 빌드))
+            
+        (Production build(생산 빌드) 해보기)
+        1. npm run build 실행 (실행되면서 Production build 생성됨)
+        2. sudo npm install -g serve 입력 (-g 옵션은 글로벌이라는 설치하는 컴퓨터 모든 곳에서 사용할 수 있는 명령어가 된다.),(sudo는 슈퍼 계정으로 입력을 해야만 -g 옵션이 써진다.) 나는 sudo를 쓰면 실행할 수 있는 배치 파일이 아니라고 떠서 빼고 하니깐 잘 된다..
+        3. 위에를 입력하면 serve란게 생성이 된다.
+        4. serve -s build를 입력하면 Serving이 완료가 된다.
+
 */
