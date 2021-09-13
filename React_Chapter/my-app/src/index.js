@@ -4,10 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const formatName = function (name) {
+  return name.firstName + " " + name.lastName;
+}
+
+const name = { 
+  firstName : "Inje",
+  lastName : "Lee",
+};
+
+const element = <h1>Hello, {formatName(name)}!</h1>
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  element,
   document.getElementById('root')
 );
 
