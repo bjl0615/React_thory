@@ -26,7 +26,29 @@
 
         모든 React components는 그들이 Porop에 관해선 Pure 함수 같은 역할을 해야한다.
         (Props를 직접 바꿀 수 없고, 같은 Props에 대해선 항상 같은 결과를 보여줄 것!!)
+    
+    Component 만들기
+        Function Component
+            function Welcome(props) {
+                return <h1>Hello, {props.name}</h1>
+            }
+            이 코드를 보면 props를 받아서 React Component를 반환하기 떄문에 이 코드는 Function Component라고 부를 수 있다.
+        
+        Class Components
+            class Welcome extends React.Component {
+                render() {
+                    return <h1>Hello, {this.props.name}</h1>
+                }
+            }
+            위코드르 보면 React.Component를 상속을 받았고 props를 사용해서 React Elements를 리턴을 하게 된다.
 
+        Component이름은 함상 대문자로 시작해야 한다!
+            HTML div 태그로 인식
+                const element = <div />;
+
+            Welcom이라는 React Component로 인식
+                const element = <Welcom name="Sara" />;
+            
 
     
 
