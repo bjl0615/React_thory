@@ -162,4 +162,23 @@
                             </div>
                         );
                     }
+
+                    function Comment(props) {
+                        return (
+                            <div className = "Comment">
+                                <UserInfo user={props.author} />
+                                <div className="UserInfo-name">
+                                    {props.author.name}
+                                </div>
+                                <div className="Comment-text">
+                                    {prop.text}
+                                </div>
+                                <div className="Comment-date">
+                                    {formatDate(prop.date)}
+                                </div>
+                            </div>
+                        );
+                    }
+
+                재상용 가능한 많은 Component를 갖고 있을 수록 개발 속도가 빨라진다.
 */
