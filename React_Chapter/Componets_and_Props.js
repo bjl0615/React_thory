@@ -48,8 +48,118 @@
 
             Welcom이라는 React Component로 인식
                 const element = <Welcom name="Sara" />;
-            
 
+    Component 렌더링
+        DOM 태그를 사용한 element
+            const element = <div />;
+        
+        사용지기 정의한 Component를 사용한 element
+            const element = <Welcome name="Sara" />;
+
+        function Welcome(props) {
+            return <h1>Hello, {props.name}</h1>;
+        }
+
+        const element = <Welcome name="Sara" />;
+        ReactDOM.render(
+            element,
+            document.getElementById('root')
+        )
+        ReactDOM의 render 함수가 호출이 되면 여기서 React는 element를 가지고 봤더니 Welcome이라는 Component를 사용을 했다.
+        그럼 이제 React에서는 Welcome Component가 name:'Sara'란 것을 props에 집어 넣어서 새로운 element를 생성하게 된다.
+        그럼 function은 Hello, {props.name} 즉 Hello, Sara를 리턴을 한다.
     
+    Component 합성
+       Component안에 또 다른 Component를 쓸 수 있다.
+       복잡한 화면을 여러개의 Component를 나눠서 구현 가능!
+             function Welecome(props){
+                 return <h1>Hello, {props.name}</h1>
+             }
 
+             function App(){
+                 return {
+                     <div>
+                        <Welcome name="Sara" />
+                        <Welcome name="Cahal" />
+                        <Welcome name="Edite" />
+                    </div>
+                 };
+             }
+
+             ReactDOM.render(
+                 <App />,
+                 document.getElementById('root')
+             );
+            
+    Component 추출
+        큰 컴포넌트를 산산조각내자!
+        재상용성을 올리고 개발속도도 올라가게 된다.
+                function Comment(props) {
+                    return (
+                        <div className = "Comment">
+                            <div className = "UserInfo">
+                                <img className = "Avatar"
+                                    src={props.author.avatarUrl}
+                                    alt={props.author.name}
+                                />
+                                <div className="UserInfo-name">
+                                    {props.author.name}
+                                </div>
+                            </div>
+                            <div className="UserInfo-name">
+                                {props.author.name}
+                            </div>
+                            <div className="Comment-text">
+                                {prop.text}
+                            </div>
+                            <div className="Comment-date">
+                                {formatDate(prop.date)}
+                            </div>
+                        </div>
+                    );
+                }
+
+                1. Avatar 추출하기
+                    function Avatar(props) {
+                        return (
+                            <img className="Avatar"
+                                src={props.user.avatarUrl}
+                                alt={props.user.name}
+                            />
+                        );
+                    }
+
+                    function Comment(props) {
+                        return (
+                            <div className = "Comment">
+                                <div className = "UserInfo">
+                                    <Avatar user={props.author} />
+                                    <div className="UserInfo-name">
+                                        {props.author.name}
+                                    </div>
+                                </div>
+                                <div className="UserInfo-name">
+                                    {props.author.name}
+                                </div>
+                                <div className="Comment-text">
+                                    {prop.text}
+                                </div>
+                                <div className="Comment-date">
+                                    {formatDate(prop.date)}
+                                </div>
+                            </div>
+                        );
+                    }
+    
+                2. UserInfo 추출하기
+                    function UserInfo(props) {
+                        return (
+                            <div className = "UserInfo">
+                                <Avatar user={props.user} />
+                                <div className="UserInfo-name">
+                                    {props.user.name}
+                                </div>
+                            </div>
+                        );
+                    }
 */
