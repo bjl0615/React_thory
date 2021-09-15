@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
 import App from './App';
-import Chapter06 from './Chapter06';
+import LoginControl from './Chapter07/LoginControl';
+import Greeting from './Chapter07/Greeting';
 
-ReactDOM.render(<Chapter06 />, document.getElementById('root'));
+
+ReactDOM.render(<LoginControl />, document.getElementById('root'));
