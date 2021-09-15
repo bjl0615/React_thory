@@ -30,6 +30,4 @@
     Lifecycle(생명주기)
         Component Lifecycle
         React component의 생명주기
-        
-        
 */
